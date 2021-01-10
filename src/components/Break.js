@@ -3,11 +3,15 @@ import React from 'react'
 function Break(props){
 
     return (
-        <section className="interval-container">
+        <section>
+            <h4>Break Length</h4>
+            <section className="interval-container">
             <button>Down</button>
-            <p>{props.break}</p>    
+            <p className="interval-text">{props.break}</p>    
             <button>Up</button>
+            </section>
         </section>
+     
     );
 }
 
