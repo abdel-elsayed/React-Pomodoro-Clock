@@ -3,15 +3,79 @@ import React from "react";
 class Timer extends React.Component{
     constructor(){
         super();
-
         this.state = {
             isSession: true,
-            timerSecond: 0
-        }
+            timerSecond: 0,
+            intervalID: 0
+        };
+        this.start = this.start.bind(this);
+        this.stop = this.stop.bind(this);
+        this.restart = this.restart.bind(this);
+        this.decreaseTimer = this.decreaseTimer.bind(this);
+
     }
+
+    start(){
+        let intervalID = setInterval(this.decreaseTimer, 1000);
+        this.props.onPlay(true);
+        this.setState({
+            intervalID: intervalID
+        })
+        alert("Timer has Started!!");
+    }
+
+    decreaseTimer(){
+        switch(this.state.timerSecond){
+            case 0:
+                if(this.props.timerMinute === 0){
+                    if(this.state.isSession){
+                        this.setState({
+                            isSession: false
+                        });
+                        this.props.onToggleInterval(this.state.isSession);
+                    }
+                    else{
+                        this.setState({
+                            isSession: true
+                        });
+                        this.props.onToggleInterval(this.state.isSession);
+                    }
+                }else{
+                this.props.UpdateTimerMinute()
+                this.setState({
+                    timerSecond: 59
+                })
+            }
+                break;
+            default:
+                this.setState((prevState) =>{
+                    return{
+                        timerSecond: prevState.timerSecond - 1
+                    }
+                })
+                break;
+        }
+    
+    }
+    stop(){
+        clearInterval(this.state.intervalID);
+        this.props.onPlay(false);
+    }
+
+    restart(){
+        this.stop();
+        this.props.resetTimer();
+        this.props.onPlay(false);
+        this.setState({
+            timerSecond: 0,
+            isSession: true
+        })
+
+    }
+
     render(){
         return (
-            <section>
+            <section className="timer-card">
                 <section className="timer-container">
                     <h4>{this.state.isSession===true ? "Session" : "Break"}</h4>
                     <span className="timer">{this.props.timerMinute}</span>
@@ -23,9 +87,9 @@ class Timer extends React.Component{
                     </span>
                 </section>
                 <section className="timer-actions">
-                    <button className="action-button">Play</button>
-                    <button className="action-button">Stop</button>
-                    <button className="action-button">Refresh</button>
+                    <button disabled={this.props.isPlay === true ? "disabled" : ""} onClick={this.start}>Start</button>
+                    <button onClick={this.stop}>Stop</button>
+                    <button onClick={this.restart}>Restart</button>   
                 </section>
             </section>
         )

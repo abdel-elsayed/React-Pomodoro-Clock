@@ -96,26 +96,28 @@ onPlay(isPlay){
     return (
     <main>
       <h2>Pomodoro clock</h2>
-      <section className ="break-session-container">
-        <Break 
+      <section className="clock-card">
+        <section className ="break-session-container">
+          <Break 
+            isPlay = {this.state.isPlay}
+            break={this.state.break} 
+            increaseBreak={this.onIncreaseBreakLength} 
+            decreaseBreak={this.onDecreaseBreakLength}/>
+          <Session 
+            isPlay = {this.state.isPlay}
+            session={this.state.session}
+            increaseSession={this.onIncreaseSessionLength}
+            decreaseSession={this.onDecreaseSessionLength}/>
+        </section>
+        <Timer  
           isPlay = {this.state.isPlay}
-          break={this.state.break} 
-          increaseBreak={this.onIncreaseBreakLength} 
-          decreaseBreak={this.onDecreaseBreakLength}/>
-        <Session 
-          isPlay = {this.state.isPlay}
-          session={this.state.session}
-          increaseSession={this.onIncreaseSessionLength}
-          decreaseSession={this.onDecreaseSessionLength}/>
+          timerMinute = {this.state.timerMinute}
+          break = {this.state.break}
+          UpdateTimerMinute = {this.onUpdateTimerMinute}
+          onToggleInterval = {this.onToggleInterval}
+          resetTimer={this.onReset}
+          onPlay={this.onPlay}/>
       </section>
-      <Timer  
-        isPlay = {this.state.isPlay}
-        timerMinute = {this.state.timerMinute}
-        break = {this.state.break}
-        UpdateTimerMinute = {this.onUpdateTimerMinute}
-        onToggleInterval = {this.onToggleInterval}
-        resetTimer={this.onReset}
-        onPlay={this.onPlay}/>
     </main>
   );
   }
