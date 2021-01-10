@@ -1,9 +1,5 @@
 body {
-  background-image: linear-gradient(
-    to left,
-    rgb(218, 31, 31),
-    rgb(109, 31, 31)
-  );
+  background: url(https://cdn.wallpapersafari.com/39/69/aYtNc1.jpg);
 }
 main {
   display: flex;
@@ -14,12 +10,12 @@ main {
 }
 
 h2 {
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+  border-bottom: 10px solid #000;
+
+  color: rgb(145, 125, 125);
   font-size: 4rem;
   font-weight: 400;
+  opacity: initial;
 }
 
 h4 {
@@ -41,13 +37,22 @@ h4 {
 }
 
 button {
-  padding: 5px 12px;
-  margin: 0 10px;
-  height: 25px;
-  border: 1px solid black;
-  background-color: rgb(92, 36, 27);
-  border: 1px solid black;
-  color: white;
+  background-color: rgb(184, 167, 167);
+  border-radius: 15px;
+  display: inline-block;
+  cursor: pointer;
+  color: #251d20;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 7px 25px;
+}
+button:hover {
+  background: linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+  background-color: #bab1ba;
+}
+button:active {
+  position: relative;
+  top: 1px;
 }
 
 .interval-text {
@@ -89,4 +94,6 @@ button {
     rgb(109, 31, 31)
   );
   border: 5px solid black;
+  border-radius: 5%;
+  padding: 50px;
 }

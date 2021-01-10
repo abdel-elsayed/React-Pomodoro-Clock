@@ -21,7 +21,7 @@ class Timer extends React.Component{
         this.setState({
             intervalID: intervalID
         })
-        alert("Timer has Started!!");
+        alert("Timer is going to Start!!\nPlease press ok to confirm");
     }
 
     decreaseTimer(){
