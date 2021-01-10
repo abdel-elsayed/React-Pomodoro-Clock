@@ -11,7 +11,7 @@ main {
 
 h2 {
   border-bottom: 10px solid #000;
-
+  font-family: monospace;
   color: rgb(145, 125, 125);
   font-size: 4rem;
   font-weight: 400;
@@ -19,6 +19,7 @@ h2 {
 }
 
 h4 {
+  font-family: monospace;
   text-align: center;
   font-size: 2rem;
   font-weight: 400;
@@ -27,6 +28,7 @@ h4 {
 }
 
 .interval-container {
+  font-family: monospace;
   display: flex;
   margin: 0 40px;
   align-items: center;
@@ -42,7 +44,7 @@ button {
   display: inline-block;
   cursor: pointer;
   color: #251d20;
-  font-family: Arial;
+  font-family: monospace;
   font-size: 17px;
   padding: 7px 25px;
 }
@@ -62,8 +64,9 @@ button:active {
 
 .timer-container {
   border: 2px solid #263646;
+  font-family: monospace;
   margin-top: 60px;
-  background-color: white;
+  background-color: rgb(236, 225, 225);
   border-radius: 25px;
   border-color: black;
   width: 250px;
