@@ -22,6 +22,11 @@ class Timer extends React.Component{
                         this.state.timerSecond : this.state.timerSecond}
                     </span>
                 </section>
+                <section className="timer-actions">
+                    <button className="action-button">Play</button>
+                    <button className="action-button">Stop</button>
+                    <button className="action-button">Refresh</button>
+                </section>
             </section>
         )
     }
