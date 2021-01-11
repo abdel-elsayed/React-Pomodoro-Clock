@@ -6,7 +6,7 @@ https://abdels-react-pomodoro-timer.netlify.app
 
 ### Screenshot 
 
-[![Pomodoro-Clock.png](https://github.com/abdel-elsayed/React-Pomodoro-Clock/blob/master/pomodoro-clock.png)
+![Pomodoro-Clock.png](https://github.com/abdel-elsayed/React-Pomodoro-Clock/blob/master/pomodoro-clock.png)
 
 ### Technologies
 HTML5, CSS3, Bootstrap, JavaScript, ReactJS
